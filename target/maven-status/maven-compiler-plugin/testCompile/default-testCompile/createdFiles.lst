@@ -1,0 +1,16 @@
+com\demoAutomationProject\LoginPageVerification.class
+pom\LoginPagePOM.class
+utilities\LocalHelper.class
+pages\LoginPage.class
+pom\ProductAddToCartAndPurchasePagePOM.class
+com\demoAutomationProject\ProductAddToCartAndPurchaseVerification.class
+pages\RegisterPage.class
+pom\RegisterPagePOM.class
+utilities\ExtentReportListener.class
+utilities\ScreenshotUtils.class
+com\demoAutomationProject\RegisterPageVerification.class
+pages\ProductAddToCartAndPurchasePage.class
+baseClass\BaseClass.class
+utilities\ExtentReportManager.class
+constants\Constants.class
+utilities\TestUtil.class

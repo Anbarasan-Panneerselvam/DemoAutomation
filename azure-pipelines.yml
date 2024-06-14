@@ -1,0 +1,30 @@
+trigger:
+      - main
+      - pipeline
+
+pool:
+  vmImage: 'windows-2019'
+
+name: 0.0.$(rev:r)
+
+steps:
+  - task: Maven@3
+    displayName: 'Maven validate'
+    inputs:
+      mavenPomFile: '$(system.defaultworkingdirectory)/pom.xml'
+      goals: 'clean validate'
+
+  - task: Maven@3
+    displayName: 'Maven Test'
+    inputs:
+      mavenPomFile: '$(System.DefaultWorkingDirectory)/pom.xml'
+      goals: 'clean test'
+      publishJUnitResults: true
+      testResultsFiles: '$(System.DefaultWorkingDirectory)/target/surefire-reports/TEST-*.xml'
+      testRunTitle: 'All Index Regression'
+      javaHomeOption: 'JDKVersion'
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: false
+      effectivePomSkip: false
+      sonarQubeRunAnalysis: false
+    continueOnError: true
